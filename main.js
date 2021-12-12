@@ -15,7 +15,8 @@ window.addEventListener("load", () => {
     navigator.geolocation.getCurrentPosition((postion) => {
       long = postion.coords.longitude;
       lat = postion.coords.latitude;
-      const api = `http://api.weatherapi.com/v1/current.json?key=bde86e56053b48e092465414211212&q=${lat},${long}`;
+      const proxy = `https://cors-anywhere.herokuapp.com/`;
+      const api = `${proxy}http://api.weatherapi.com/v1/current.json?key=bde86e56053b48e092465414211212&q=${lat},${long}`;
       console.log(api);
 
       fetch(api)
